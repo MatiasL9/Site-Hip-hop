@@ -1,0 +1,637 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    background: #101116;
+    color: #fff;
+}
+
+
+/* =====================================
+   CABEÇALHO E MENU
+===================================== */
+
+header {
+    background-color: #635bc5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 10px 20px;
+    min-height: 60px;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.navbar a:link,
+.navbar a:visited {
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    background-color: #59413C;
+}
+
+
+/* =====================================
+   BANNER PRINCIPAL
+===================================== */
+
+#hero {
+    background-image: url('img/hero.jfif');
+    width: 100%;
+    min-height: 100vh;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    position: relative;
+}
+
+/* Escurecer a imagem */
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Conteúdo */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    color: #00aeef;
+    font-size: 6rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Botão */
+.btn {
+    display: inline-block;
+    background: #406138;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #59413C;
+}
+
+/* Celular */
+@media (max-width: 650px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.6rem;
+    }
+}
+
+/* =====================================
+   TÍTULOS E SEÇÕES GERAIS
+===================================== */
+
+h1 {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 3rem;
+}
+
+section {
+    padding: 50px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1b1b24;
+}
+
+
+/* =====================================
+   SEÇÃO SOBRE
+===================================== */
+
+#about p {
+    background-color: 1b1b24;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+
+/* =====================================
+   SEÇÃO POVOS TUPI
+===================================== */
+
+.povos-tupi {
+    background-color: #f4efe2;
+    padding: 100px 20px;
+    color: #2f3b2f;
+}
+
+.container {
+    max-width: 1100px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Cabeçalho da seção */
+
+.secao-cabecalho {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+.subtitulo {
+    color: #6b7d45;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.secao-cabecalho h2 {
+    font-size: 42px;
+    color: #304b35;
+    margin: 15px 0;
+}
+
+.secao-cabecalho p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #687064;
+}
+
+/* Conteúdo Tupi */
+
+.conteudo-tupi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.texto-tupi {
+    background-color: #1b1b24;
+    padding: 35px;
+    border-radius: 14px;
+    border-left: 5px solid #71864c;
+    box-shadow: 0 8px 25px rgba(47, 59, 47, 0.08);
+}
+
+.texto-tupi h3 {
+    color: #304b35;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.texto-tupi p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Card em destaque */
+
+.texto-tupi.destaque {
+    grid-column: 1 / -1;
+    background-color: #304b35;
+    border-left: 5px solid #c79b52;
+}
+
+.texto-tupi.destaque h3 {
+    color: #f4e7c5;
+}
+
+.texto-tupi.destaque p {
+    color: #fff;
+}
+
+
+/* =====================================
+   CARD GRAFFITI
+===================================== */
+
+.graffiti-card {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+    min-height: 400px;
+
+    padding: 30px;
+    margin-top: 35px;
+
+    background: #1b1b24;
+    border-left: 5px solid #00a9e8;
+    border-radius: 10px;
+}
+
+/* Imagem */
+
+.culture-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.culture-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+}
+
+.culture-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Textos */
+
+.culture-content {
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.culture-number {
+    color: #00a9e8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.culture-content h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    color: #00a9e8;
+    margin: 15px 0;
+}
+
+.culture-content p {
+    background: transparent;
+    color: #d0d0d0;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+    margin: 15px 0;
+    padding: 0;
+}
+
+
+/* =====================================
+   QUATRO ELEMENTOS DO HIP HOP
+===================================== */
+
+.elemento {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    background: #1b1b24;
+    padding: 30px;
+    margin-bottom: 35px;
+
+    border-radius: 12px;
+    border-bottom: 2px solid #00aeef;
+
+    min-height: 350px;
+    transition: 0.3s ease;
+}
+
+/* Imagens */
+
+.elemento img {
+    width: 43%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+/* Conteúdo */
+
+.conteudo {
+    flex: 1;
+    text-align: center;
+}
+
+.conteudo span {
+    display: block;
+    color: #00aeef;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.conteudo h1 {
+    color: #00aeef;
+    font-size: 42px;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.conteudo p {
+    color: #e0e0e0;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Efeito dos cards */
+
+.elemento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 174, 239, 0.15);
+}
+
+
+/* =====================================
+   GALERIA
+===================================== */
+
+#gallery {
+    background-color: hsla(30, 8%, 5%, 0.75);
+    display: block;
+    text-align: center;
+}
+
+#gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    display: inline-block;
+    margin: 15px;
+    border: 2px solid hsl(50 33% 25% / 0.75);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+#gallery img:hover {
+    transform: scale(1.03);
+}
+
+
+/* =====================================
+   MAPA
+===================================== */
+
+#map {
+    padding: 0;
+}
+
+
+/* =====================================
+   CONTATO
+===================================== */
+
+#contact {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#contact label {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333 !important;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#contact button,
+#contact input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #020205;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover,
+#contact input[type="submit"]:hover {
+    background-color: #635bc5;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+footer {
+    background-color: #faf7f6;
+    text-align: center;
+    padding: 25px;
+    color: #333;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TABLETS
+===================================== */
+
+@media (max-width: 900px) {
+
+    .graffiti-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .culture-image {
+        height: 300px;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TABLETS E CELULARES
+===================================== */
+
+@media (max-width: 768px) {
+
+    .povos-tupi {
+        padding: 70px 20px;
+    }
+
+    .secao-cabecalho h2 {
+        font-size: 32px;
+    }
+
+    .conteudo-tupi {
+        grid-template-columns: 1fr;
+    }
+
+    .texto-tupi.destaque {
+        grid-column: auto;
+    }
+
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES
+===================================== */
+
+@media (max-width: 650px) {
+
+    /* Graffiti */
+
+    .graffiti-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .culture-image {
+        height: 280px;
+    }
+
+    .culture-content h3 {
+        font-size: 35px;
+    }
+
+    .culture-content p {
+        font-size: 14px;
+    }
+
+    /* Hip Hop */
+
+    .elemento {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .elemento img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .conteudo h1 {
+        font-size: 32px;
+    }
+
+    .conteudo p {
+        font-size: 16px;
+    }
+
+    /* Galeria */
+
+    #gallery img {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    /* Menu */
+
+    .logo {
+        font-size: 2.4rem;
+    }
+
+    .navbar a:link,
+    .navbar a:visited {
+        font-size: 1.4rem;
+        padding: 8px;
+    }
+
+}
